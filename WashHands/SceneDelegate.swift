@@ -6,28 +6,27 @@
 //  Copyright © 2020 Vitalii Tymoshenko. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
+import ARKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    var handARSCNObservableObject = HandARSCNObservableObject()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
-
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(handARSCNObservableObject))
             self.window = window
             window.makeKeyAndVisible()
+            handARSCNObservableObject.handARSCNView.session.run(ARWorldTrackingConfiguration())
         }
     }
 
@@ -36,6 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not neccessarily discarded (see `application:didDiscardSceneSessions` instead).
+        handARSCNObservableObject.handARSCNView.session.pause()
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {

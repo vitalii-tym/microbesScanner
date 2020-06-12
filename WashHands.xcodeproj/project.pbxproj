@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE44727224828CF200BA5B3D /* HandARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44727124828CF200BA5B3D /* HandARView.swift */; };
+		FE44727424829CFE00BA5B3D /* HandARSceneObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44727324829CFE00BA5B3D /* HandARSceneObservableObject.swift */; };
 		FEF9D60D248282C10043A696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9D60C248282C10043A696 /* AppDelegate.swift */; };
 		FEF9D60F248282C10043A696 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9D60E248282C10043A696 /* SceneDelegate.swift */; };
 		FEF9D611248282C10043A696 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9D610248282C10043A696 /* ContentView.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE44727124828CF200BA5B3D /* HandARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandARView.swift; sourceTree = "<group>"; };
+		FE44727324829CFE00BA5B3D /* HandARSceneObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandARSceneObservableObject.swift; sourceTree = "<group>"; };
 		FEF9D609248282C10043A696 /* WashHands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WashHands.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF9D60C248282C10043A696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEF9D60E248282C10043A696 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				FEF9D60C248282C10043A696 /* AppDelegate.swift */,
 				FEF9D60E248282C10043A696 /* SceneDelegate.swift */,
 				FEF9D610248282C10043A696 /* ContentView.swift */,
+				FE44727124828CF200BA5B3D /* HandARView.swift */,
+				FE44727324829CFE00BA5B3D /* HandARSceneObservableObject.swift */,
 				FEF9D612248282C60043A696 /* Assets.xcassets */,
 				FEF9D617248282C60043A696 /* LaunchScreen.storyboard */,
 				FEF9D61A248282C60043A696 /* Info.plist */,
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF9D60D248282C10043A696 /* AppDelegate.swift in Sources */,
+				FE44727224828CF200BA5B3D /* HandARView.swift in Sources */,
 				FEF9D60F248282C10043A696 /* SceneDelegate.swift in Sources */,
 				FEF9D611248282C10043A696 /* ContentView.swift in Sources */,
+				FE44727424829CFE00BA5B3D /* HandARSceneObservableObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +297,7 @@
 				DEVELOPMENT_TEAM = ZLXN9939CZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WashHands/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +318,7 @@
 				DEVELOPMENT_TEAM = ZLXN9939CZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WashHands/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
