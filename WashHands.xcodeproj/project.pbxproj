@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		836B1434A84F24087AF21DB9 /* Pods_WashHands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4BAA7078AFAD3DE3739943 /* Pods_WashHands.framework */; };
 		FE44727224828CF200BA5B3D /* HandARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44727124828CF200BA5B3D /* HandARView.swift */; };
 		FE44727424829CFE00BA5B3D /* HandARSceneObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE44727324829CFE00BA5B3D /* HandARSceneObservableObject.swift */; };
 		FEF9D60D248282C10043A696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF9D60C248282C10043A696 /* AppDelegate.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B6CEE6EF6070A2080386D37 /* Pods-WashHands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WashHands.debug.xcconfig"; path = "Target Support Files/Pods-WashHands/Pods-WashHands.debug.xcconfig"; sourceTree = "<group>"; };
+		53660AB9B1C311AFB89292F8 /* Pods-WashHands.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WashHands.release.xcconfig"; path = "Target Support Files/Pods-WashHands/Pods-WashHands.release.xcconfig"; sourceTree = "<group>"; };
+		CA4BAA7078AFAD3DE3739943 /* Pods_WashHands.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WashHands.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE44727124828CF200BA5B3D /* HandARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandARView.swift; sourceTree = "<group>"; };
 		FE44727324829CFE00BA5B3D /* HandARSceneObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandARSceneObservableObject.swift; sourceTree = "<group>"; };
 		FEF9D609248282C10043A696 /* WashHands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WashHands.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836B1434A84F24087AF21DB9 /* Pods_WashHands.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4049D7A540725ED7596C4E8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA4BAA7078AFAD3DE3739943 /* Pods_WashHands.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B25F2DF707285DF2742BF3BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B6CEE6EF6070A2080386D37 /* Pods-WashHands.debug.xcconfig */,
+				53660AB9B1C311AFB89292F8 /* Pods-WashHands.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FEF9D600248282C10043A696 = {
 			isa = PBXGroup;
 			children = (
 				FEF9D60B248282C10043A696 /* WashHands */,
 				FEF9D60A248282C10043A696 /* Products */,
+				B25F2DF707285DF2742BF3BD /* Pods */,
+				4049D7A540725ED7596C4E8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,9 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEF9D61D248282C60043A696 /* Build configuration list for PBXNativeTarget "WashHands" */;
 			buildPhases = (
+				EF7425EA318DD916F921351F /* [CP] Check Pods Manifest.lock */,
 				FEF9D605248282C10043A696 /* Sources */,
 				FEF9D606248282C10043A696 /* Frameworks */,
 				FEF9D607248282C10043A696 /* Resources */,
+				FED4D2D024942DD60073C5AA /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -146,6 +172,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EF7425EA318DD916F921351F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WashHands-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FED4D2D024942DD60073C5AA /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FEF9D605248282C10043A696 /* Sources */ = {
@@ -290,6 +359,7 @@
 		};
 		FEF9D61E248282C60043A696 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B6CEE6EF6070A2080386D37 /* Pods-WashHands.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -311,6 +381,7 @@
 		};
 		FEF9D61F248282C60043A696 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53660AB9B1C311AFB89292F8 /* Pods-WashHands.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

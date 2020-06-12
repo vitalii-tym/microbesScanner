@@ -14,7 +14,7 @@ struct HandARView: UIViewRepresentable {
 //    let scene = SCNScene(named: "art.scnassets/ship.scn")!
 
     @EnvironmentObject var handARSCNObservableObject: HandARSCNObservableObject
-    
+
     func makeUIView(context: Context) -> ARSCNView {
         // create and add a camera to the scene
 //        let cameraNode = SCNNode()
@@ -43,7 +43,7 @@ struct HandARView: UIViewRepresentable {
 
         // animate the 3d object
         //ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-        
+
         return handARSCNObservableObject.handARSCNView
     }
 

@@ -15,7 +15,7 @@ struct AnimatedView<Content>: UIViewRepresentable where Content: View {
     func makeUIView(context: UIViewRepresentableContext<AnimatedView>) -> UIView {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        
+
         let sub = UIHostingController(rootView: content())
         sub.view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(sub.view)
@@ -29,13 +29,13 @@ struct AnimatedView<Content>: UIViewRepresentable where Content: View {
         let squashAnimation = CAKeyframeAnimation(keyPath: "transform.scale.y")
         squashAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
         squashAnimation.values = [0.9, 0.8, 0.9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-                
+
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [jumpAnimation, squashAnimation]
         groupAnimation.beginTime = CACurrentMediaTime() + startTime
         groupAnimation.duration = 0.95
         groupAnimation.repeatCount = Float.infinity
-        
+
         view.layer.add(groupAnimation, forKey: "microbeJumpingAnimation")
         return view
     }
@@ -49,7 +49,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HandARView()
-            VStack(alignment: .leading){
+            VStack(alignment: .leading) {
                 HStack {
                     Text("Microbes")
                         .font(.title)
@@ -79,25 +79,24 @@ struct ContentView: View {
                     .font(.subheadline)
                 HStack {
                     Spacer()
-                    Button(action: {
-                         print("test")
-                    }) {
-                        Text("Settings")
-                            .foregroundColor(.purple)
-                            .font(.headline)
-                            .padding(EdgeInsets(top: 7, leading: 7, bottom: 7, trailing: 7))
-                            .cornerRadius(15)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.purple, lineWidth: 2)
-                        )
-                    }
+                    Button(action: { print("test") },
+                            label: {
+                                Text("Settings")
+                                    .foregroundColor(.purple)
+                                    .font(.headline)
+                                    .padding(EdgeInsets(top: 7, leading: 7, bottom: 7, trailing: 7))
+                                    .cornerRadius(15)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 15)
+                                    .stroke(Color.purple, lineWidth: 2)
+                                )
+                    })
                 }
             }
             .padding()
         }
     }
-    
+
 }
 
 #if DEBUG
